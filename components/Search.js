@@ -76,10 +76,10 @@ const Search = () => {
             marginTop: 60,
           }}
         >
-          <Entypo name="circle-with-cross" size={30} color="white" />
+          <Entypo name="circle-with-cross" size={30} color="#007FFF" />
         </TouchableOpacity>
         <View style={{ height: "100%"}}>
-          <SingleNews item={currentNews} />
+          <SingleNews item={currentNews} renderHeight = {1.0}/>
         </View>
       </Modal>
     </View>

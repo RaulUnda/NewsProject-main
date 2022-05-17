@@ -5,20 +5,20 @@ import { NewsContext } from "../API/Context";
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
-const SingleNews = ({ item, index }) => {
+const SingleNews = ({ item, index, renderHeight }) => {
     const {darkTheme} = useContext(NewsContext);
     return (
         <View
             style={{
-                height: windowHeight*0.85,
-                width: windowWidth*0.9,
+                height: windowHeight*renderHeight,
+                width: windowWidth,
                 //transform: [{ scaleY: -1 }],
 
             }}
         >
             <Image
                 source={{ uri: item.urlToImage }}
-                style={{ height: "45%", resizeMode: "cover", width: windowWidth*0.9 }}
+                style={{ height: "45%", resizeMode: "cover", width: windowWidth }}
             />
             <View
                 style={{
@@ -31,7 +31,7 @@ const SingleNews = ({ item, index }) => {
                     {item.description}
                 </Text>
                 <Text style={{ color: darkTheme ? "white" : "black"}}>
-                    Short by
+                    Sort by
                     <Text> {item.autor ?? "unknown"}</Text>
                 </Text>
                 <ImageBackground
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     },
     footer: {
         height: 80,
-        width: windowWidth*0.9,
+        width: windowWidth,
         position: "absolute",
         bottom: 0,
         backgroundColor: "#d7be69",
