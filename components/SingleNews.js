@@ -30,7 +30,7 @@ const SingleNews = ({ item, index }) => {
                 <Text style={{ ...styles.content, color: darkTheme ? "white" : "black"}}>
                     {item.description}
                 </Text>
-                <Text style={{ color: black ? "white" : "black"}}>
+                <Text style={{ color: darkTheme ? "white" : "black"}}>
                     Short by
                     <Text> {item.autor ?? "unknown"}</Text>
                 </Text>
